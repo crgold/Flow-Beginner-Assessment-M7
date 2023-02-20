@@ -6,9 +6,14 @@
   You will have to write all the transactions to set up the accounts, mint the NFTs, and then the 
   scripts to read the NFT's metadata. We have done most of this in the lessons up to this point, 
   so you can look for help there :)
+
+Functionality
+  Script displays NFT metadata for a certain id
+  Contract is publicly available
+  borrowAuthNFT is added
  */
 
-import NonFungibleToken from "./NonFungibleToken.cdc"
+import NonFungibleToken from 0x179b6b1cb6755e31
 
 pub contract CryptoPoops: NonFungibleToken {
   pub var totalSupply: UInt64
