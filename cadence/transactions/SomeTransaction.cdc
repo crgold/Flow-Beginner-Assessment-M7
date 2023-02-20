@@ -1,5 +1,5 @@
 // read more about Cadence transactions here https://developers.flow.com/cadence/language/transactions
-import "Person"
+import "CryptoPoops"
 
 transaction {
     let acc: AuthAccount
@@ -11,8 +11,7 @@ transaction {
     pre {}
 
     execute {
-        // save the resource to the storage, read more about it here https://developers.flow.com/cadence/language/accounts#account-storage
-        self.acc.save<@Person.Friendship>(<-Person.makeFriends(), to: StoragePath(identifier: "friendship")!)
+        
     }
 
     post {}
