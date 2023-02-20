@@ -1,5 +1,5 @@
 /*
-  Add a function called borrowAuthNFT just like we did in the "The Problem" lesson above.
+  Done: Add a function called borrowAuthNFT just like we did in the "The Problem" lesson above.
   Find a way to make it publicly accessible to other people so they can read our NFT's metadata.
   Run a script to display the NFTs metadata for a certain id.
 
@@ -58,7 +58,7 @@ pub contract CryptoPoops: NonFungibleToken {
       return self.ownedNFTs.keys
     }
 
-    pub fun borrowNFT(id: UInt64): &NonFungibleToken.NFT {
+    pub fun borrowAuthNFT(id: UInt64): &NonFungibleToken.NFT {
       let ref =  (&self.ownedNFTs[id] as auth &NonFungibleToken.NFT?)!
       return ref as! &NFT
     }
