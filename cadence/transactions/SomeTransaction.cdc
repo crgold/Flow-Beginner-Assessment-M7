@@ -1,4 +1,4 @@
-// read more about Cadenc transactions here https://developers.flow.com/cadence/language/transactions
+// read more about Cadence transactions here https://developers.flow.com/cadence/language/transactions
 import "CryptoPoops"
 
 transaction {
