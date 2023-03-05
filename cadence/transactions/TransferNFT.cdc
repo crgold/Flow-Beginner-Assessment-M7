@@ -5,14 +5,14 @@ transaction(recipient: Address, id: UInt64) {
 
     // the giver of the NFT
     prepare(signer: AuthAccount) {
-        let collection = signer.borrow<&CryptoPoops.Collection>(from: /storage/Collections)!
+        let collection = signer.borrow<&CryptoPoops.Collection>(from: /storage/Collection)!
 
-        let publicReference = getAccount(recipient).getCapability(/public/Collection)
+        let receiverReference = getAccount(recipient).getCapability(/public/Collection)
                                             .borrow<&CryptoPoops.Collection{NonFungibleToken.CollectionPublic}>()
                                             ?? panic("This account does not have a Collection")
 
-        let NFTIds = publicReference.getIDs()
-        publicReference.deposit(token: <- collection.withdraw(withdrawID: NFTIds[id]))
+        let NFTIds = collection.getIDs();
+        receiverReference.deposit(token: <- collection.withdraw(withdrawID: NFTIds[id]))
 
     }
 

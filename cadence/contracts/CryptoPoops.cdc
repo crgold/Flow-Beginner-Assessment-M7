@@ -1,18 +1,3 @@
-/*
-  Done: Add a function called borrowAuthNFT just like we did in the "The Problem" lesson above.
-  Find a way to make it publicly accessible to other people so they can read our NFT's metadata.
-  Run a script to display the NFTs metadata for a certain id.
-
-  You will have to write all the transactions to set up the accounts, mint the NFTs, and then the 
-  scripts to read the NFT's metadata. We have done most of this in the lessons up to this point, 
-  so you can look for help there :)
-
-Functionality
-  Script displays NFT metadata for a certain id
-  Contract is publicly available
-  borrowAuthNFT is added
- */
-
 import NonFungibleToken from 0x179b6b1cb6755e31
 
 pub contract CryptoPoops: NonFungibleToken {
@@ -82,8 +67,8 @@ pub contract CryptoPoops: NonFungibleToken {
 
   pub resource Minter {
 
-    pub fun createNFT(name: String, favouriteFood: String, luckyNumber: UInt64): @NFT {
-      return <- create NFT(_name: name, _favoriteFood: favouriteFood, _luckyNumber: luckyNumber)
+    pub fun createNFT(name: String, favoriteFood: String, luckyNumber: UInt64): @NFT {
+      return <- create NFT(_name: name, _favoriteFood: favoriteFood, _luckyNumber: luckyNumber)
     }
 
     pub fun createMinter(): @Minter {
@@ -98,4 +83,3 @@ pub contract CryptoPoops: NonFungibleToken {
     self.account.save(<- create Minter(), to: /storage/Minter)
   }
 }
- 

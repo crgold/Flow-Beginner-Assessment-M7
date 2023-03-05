@@ -15,4 +15,3 @@ transaction {
         log("Stored a Collection for our CryptoPoops")
     }
 }
- 

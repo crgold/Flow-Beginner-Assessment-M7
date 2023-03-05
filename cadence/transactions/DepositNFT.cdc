@@ -2,7 +2,7 @@
 import CryptoPoops from 0x01cf0e2f2f715450
 import NonFungibleToken from 0x179b6b1cb6755e31
 
-transaction(account: Address, name: String, favoriteFood: String, luckyNumber: ) {
+transaction(account: Address, name: String, favoriteFood: String, luckyNumber: UInt64) {
 
     prepare(signer: AuthAccount) {
         let minter = signer.borrow<&CryptoPoops.Minter>(from: /storage/Minter)
